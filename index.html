@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Site informativo sobre HTTP - Trabalho de redes">
+  <meta name="author" content="Beabelha">
+
+  <title>HTTP - info</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="scss/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fontes customizaveis -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="scss/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+  <!-- ICONE (FAVICON) DO SITE -->
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">O QUE É?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#cookies">COOKIES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">REQUISIÇÃO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">RESPOSTAS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#interests"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#awards"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">HTTP
+          <span class="text-primary">INFO</span>
+        </h1>
+        <div class="subheading mb-5">Um site explicativo <b>(e muito legal)</b> sobre http
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- Primeira sessão, o que é http --> 
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">O QUE É HTTP?</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+           <p>
+            Hypertext Transfer Protocol, é um protocolo de camada de aplicação para transmissão de documentos hipermídia, como o HTML.
+            Foi desenvolvido para comunicação entre navegadores web e servidores web, porém pode ser utilizado para outros propósitos também.
+          </p>
+          <h4 class="mb-0"> Tá, mas como assim? ;-; </h4><br>
+          <p> O HTTP é o protocolo que determina os padrões e define as regras de troca de informações entre servidores que abrigam sites e computadores.
+          Em analogia, o HTTP é a ponte que organiza esse tráfego e padroniza toda codificação, fazendo o seu site chegar até a tela do usuário.</p>
+          <h4 class="mb-0">E como ele funciona?</h4>
+          <br>
+          <p>
+           Quando você digitou o endereço desse site maravilhoso você fez um pedido via HTTP para o servidor (no caso o Heroku). 
+           Esse pedido se chama Request HTTP. Primeiramente, o navegador descobre o endereço IP do servidor web usando o DNS. 
+           Em seguida, o navegador web faz a conexão diretamente com o servidor web, solicitando uma página, imagem ou algum outro arquivo.  Por sua vez, o servidor HTTP envia ao navegador o conteúdo solicitado, legal, né? :)
+         </p>
+       </div>
+     </div>
+
+   </div>
+
+ </section>
+
+ <hr class="m-0">
+
+ <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+  <div class="w-100">
+    <h2 class="mb-5">MÉTODOS DE <span class="text-primary">REQUISIÇÃO</span></h2>
+
+    <table class="table table-hover table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">NOME</th>
+          <th scope="col">DESCRIÇÃO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- linha do GET -->
+          <th scope="row">1</th>
+          <td><b>GET</b></td>
+          <td>O método GET é usado para recuperar informações do servidor especificado usando um determinado URI</td>
+        </tr>
+        <!-- linha do POST -->
+        <tr>
+          <th scope="row">2</th>
+          <td><b>POST</b></td>
+          <td>O método POST é utilizado quando queremos criar um recurso. Quando usamos POST, os dados vão no corpo da requisição e não na URI.</td>
+        </tr>
+        <!-- linha do GET -->
+        <tr>
+          <th scope="row">3</th>
+          <td><b>PUT</b></td>
+          <td>Requisita que um recurso seja "guardado" na URI fornecida. Se o recurso já existir, ele deve ser atualizado. Se não existir, pode ser criado.</td>
+        </tr>
+        <!-- linha do DELETE -->
+        <tr>
+          <th scope="row">4</th>
+          <td><b>DELETE</b></td>
+          <td>Exclui o recurso especificado.</td>
+        </tr>
+        <!-- linha do TRACE -->
+        <tr>
+          <th scope="row">5</th>
+          <td><b>TRACE</b></td>
+          <td>Devolve a mesma requisição que for enviada veja se houve mudança e/ou adições feitas por servidores intermediários.</td>
+        </tr>
+        <!-- linha do PATCH -->
+        <tr>
+          <th scope="row">6</th>
+          <td><b>PATCH</b></td>
+          <td>Serve para atualizar partes de um recurso, e não o recurso todo.</td>
+        </tr>
+
+      </tbody>
+    </table>
+    
+  </div>
+
+</div>
+</section>
+
+<hr class="m-0">
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="cookies">
+  <div class="w-100">
+    <h2 class="mb-5">cookies <span class="text-secondary">Não os de comer</span></h2>
+
+    <p>Basicamente, um Cookie é um arquivo de texto muito simples, cuja composição depende diretamente do conteúdo do endereço Web visitado. Por exemplo, a maioria do sites armazenam informações básica, como endereços IP e preferências sobre idiomas, cores, etc. Contudo, em portais como o Gmail e o Hotmail, nomes de usuários e senhas de email também fazem parte dos Cookies.</p>
+  
+  </div>
+
+
+</section>
+
+
+<hr class="m-0">
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+  <div class="w-100">
+    <h2 class="mb-5">STATUS DE <span class="text-primary">RESPOSTA</span> </h2>
+    <SPAN>OS IMPORTANTES (DE ACORDO COMIGO)</SPAN>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              1XX INFORMATIVAS
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+           <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>100 CONTINUE</b> - Essa resposta provisória indica que tudo ocorreu bem até agora e que o cliente deve continuar com a requisição ou ignorar se já concluiu o que gostaria.</li>
+            <li class="list-group-item"><b>101 SWITCHING PROTOCOL </b> - Esse código é enviado em resposta a um cabeçalho de solicitação Upgrade pelo cliente, e indica o protocolo a que o servidor está alternando.</li>
+            <li class="list-group-item"><b>102 PROCESSING </b> - Este código indica que o servidor recebeu e está processando a requisição, mas nenhuma resposta está disponível ainda.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 2xx --> 
+
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            2XX SUCESSO
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+         <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>200 OK</b> -Estas requisição foi bem sucedida. O significado do sucesso varia de acordo com o método de requisição (Listado na sessão acima!).</li>
+          <li class="list-group-item"><b>201 Created</b> - A requisição foi bem sucessida e um novo recurso foi criado como resultado. Esta é uma tipica resposta enviada após uma requisição POST</li>
+          <li class="list-group-item"><b>204 No Content </b> - Não há conteúdo para enviar para esta solicitação, mas os cabeçalhos podem ser úteis. O user-agent pode atualizar seus cabeçalhos em cache para este recurso com os novos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          3XX REDIRECIONAMENTO
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>302 Found</b> - Esse código de resposta significa que a URI do recurso requerido foi mudada temporariamente.</li>
+          <li class="list-group-item"><b>303 See Other </b> - O servidor manda essa resposta para instruir ao cliente buscar o recurso requisitado em outra URI com uma requisição GET.</li>
+          <li class="list-group-item"><b>304 Not Modified </b> - Este código indica que o servidor recebeu e está processando a requisição, mas nenhuma resposta está disponível ainda.</li>
+          <li class="list-group-item"><b>307 Temporary Redirect </b> - O servidor mandou essa resposta direcionando o cliente a buscar o recurso requisitado em outra URI com o mesmo método que foi utilizado na requisição original. Tem a mesma semântica do código 302 Found.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          4XX ERRO DO CLIENTE
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>400 Bad Request</b> -Essa resposta significa que o servidor não entendeu a requisição pois está com uma sintaxe inválida.</li>
+          <li class="list-group-item"><b>401 Unauthorized </b> - Embora o padrão HTTP especifique <i>"unauthorized"</i>, semanticamente, essa resposta significa <i>"unauthenticated"</i>. Ou seja, o cliente deve se autenticar para obter a resposta solicitada.</li>
+          <li class="list-group-item"><b>403 Forbidden </b> - O cliente não tem direitos de acesso ao conteúdo portanto o servidor está rejeitando dar a resposta. Diferente do código 401, aqui a identidade do cliente é conhecida.</li>
+          <li class="list-group-item"><b>404 Not Found </b> - O servidor não pode encontrar o recurso solicitado. Este código de resposta talvez seja o mais famoso devido à frequência com que acontece na web.</li>
+          <li class="list-group-item"><b>403 Forbidden </b> - O cliente não tem direitos de acesso ao conteúdo portanto o servidor está rejeitando dar a resposta. Diferente do código 401, aqui a identidade do cliente é conhecida.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          5XX ERRO DE SERVIDOR
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>500 Internal Server Error </b> - EO servidor encontrou uma situação com a qual não sabe lidar.</li>
+          <li class="list-group-item"><b>502 Bad Gateway </b> - Esta resposta de erro significa que o servidor, ao trabalhar como um gateway a fim de obter uma resposta necessária para manipular a requisição, obteve uma resposta inválida.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+</section>
+
+<hr class="m-0">
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+  <div class="w-100">
+    <h2 class="mb-5">Interests</h2>
+    <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+  </div>
+</section>
+
+<hr class="m-0">
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+  <div class="w-100">
+    <h2 class="mb-5">Awards &amp; Certifications</h2>
+    <ul class="fa-ul mb-0">
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+      Google Analytics Certified Developer</li>
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+      Mobile Web Specialist - Google Certification</li>
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+        1<sup>st</sup>
+      Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+        1<sup>st</sup>
+      Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+        2<sup>nd</sup>
+      Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+        1<sup>st</sup>
+      Place - James Buchanan High School - Hackathon 2006</li>
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+        3<sup>rd</sup>
+      Place - James Buchanan High School - Hackathon 2005</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="scss/jquery.min.js"></script>
+<script src="scss/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="scss/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
