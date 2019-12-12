@@ -51,10 +51,19 @@
           <a class="nav-link js-scroll-trigger" href="index.html">Voltar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#itens">Bora lá!</a>
+          <a class="nav-link js-scroll-trigger" href="#GET">GET</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards"></a>
+          <a class="nav-link js-scroll-trigger" href="#POST">POST</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#PP">PUT E PATCH</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#delete">DELETE</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#delete">DELETE</a>
         </li>
       </ul>
     </div>
@@ -75,30 +84,29 @@
     <hr class="m-0">
 
     <!-- Primeira sessão, o que é http --> 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="itens">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="GET">
       <div class="w-100">
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-
-
+            <h2 class="mb-0">GET </h2>
+            <small>Clique no botão para destravar o proximo e seguir a ordem! :)</small>
+            <br>
+            <small>A listagem resource e o não consta resource são exatamente iguais ao "Listar" normal, por isso não inclui.</small>
+            <HR>
             <!-- DATA TABLE -->
             <div class="container">
               <div class="row">
                 <div class="col-sm">
                   <div class="btn-group-vertical" role="group" aria-label="Basic example">
                     <button id="listar" type="button" class="btn btn-secondary">Listar</button>
-                    <button id="listarUnico" type="button" class="btn btn-secondary">Listar Unico</button>
-                    <button id="naoConsta" type="button" class="btn btn-secondary">Não consta</button>
-                    <button id="listarRSC" type="button" class="btn btn-secondary">Listar (rsc)</button>
-                    <button id="listarUnicoRSC" type="button" class="btn btn-secondary">Único (rsc)</button>
-                    <button id="listarUnicoRSCEr" type="button" class="btn btn-secondary">Unico (rsc- 404)</button>
-                    <button id="Criar" type="button" class="btn btn-secondary">Criar</button>
-                    <button id="atualizarPost" type="button" class="btn btn-secondary">Atualizar - POST</button>
-                    <button id="atualizarPatch" type="button" class="btn btn-secondary">Atualizar - Patch</button>
-                    <button id="deletar" type="button" class="btn btn-secondary">Deletar</button>
+                    <button id="listarUnico" type="button" class="btn btn-secondary" disabled>Listar Único</button>
+                    <button id="naoConsta" type="button" class="btn btn-secondary" disabled>Não consta</button>
+                    <button id="listarRSC" type="button" class="btn btn-secondary" disabled>Listar (rsc)</button>
                   </div>
+                  
                 </div>
+                <span display="none" id="retornoErro"></span>
                 <div id="colTable" class="col-md-8" style="display: none;">
 
                   <table id="dataTable" class="table table-borderless">
@@ -117,6 +125,7 @@
 
 
                   </div>
+                  <!-- Div para dados unicos -->
                   <div id="escondida" style="display: none;">
                     <table id="unico" class="table table-bordered">
                       <tbody>
@@ -131,46 +140,185 @@
                     </table>
                   </div>
                   <div id="form" style="display: none;">
-                    <form method="POST">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Nome</label>
-                        <input name="nome" type="text" class="form-control" id="nome" aria-describedby="emailHelp">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Sobrenome</label>
-                        <input name="sobrenome" type="text" class="form-control" id="sobrenome" aria-describedby="emailHelp">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Cargo</label>
-                        <input name="trabalho" type="text" class="form-control" id="trabalho">
-                      </div>
-                      <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
-                    </form>    
-                  </div>   
-                  <span display="none" id="retornoErro"></span>
-                  <span display="none" id="retornoCreate1"></span>
-                  <span display="none" id="retornoCreate2"></span>
+                    <!-- Span para retorno curto -->                  
+                    <span id="rscunico"></span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sessão do POST -->
+
+      <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="POST">
+        <div class="w-100">
+
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+             <h2 class="mb-0">POST </h2>
+             <small>Essa função cria um novo registro</small>
+             <HR>
+
+             <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <div class="btn-group-vertical" role="group" aria-label="Basic example">
+
+                    <button id="Criar" type="button" class="btn btn-secondary">Criar</button>
+
+                  </div>
+                </div>
+                <div id="formPost" style="display: none;">
+                  <form method="POST">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nome</label>
+                      <input name="nome" type="text" class="form-control" id="nome" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Sobrenome</label>
+                      <input name="sobrenome" type="text" class="form-control" id="sobrenome" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Cargo</label>
+                      <input name="trabalho" type="text" class="form-control" id="trabalho">
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+                  </form>    
+                </div>   
+                <div id="colTablePost" class="col-md-8" >
+
+                  <div id="escondidaPost" style="display: none;">
+                    <table id="unico" class="table table-bordered">
+                      <thead>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="nomePost"></td>
+                          <td id="cargoPost"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
                 </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="PP">
+      <div class="w-100">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+           <h2 class="mb-0">PUT E PATCH</h2>
+           <small>Essa função altera o usuário de id 2 dos registros</small>
+           <HR>
+
+           <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <div class="btn-group-vertical" role="group" aria-label="Basic example">
+
+                  <button id="atualizarPut" type="button" class="btn btn-secondary">Atualizar - PUT</button>
+                  <button id="atualizarPatch" type="button" class="btn btn-secondary">Atualizar - Patch</button>
+                </div>
+              </div>
+              <div id="formPP" style="display: none;">
+
+                <span id="usuarioAntigo"></span>
+                <form method="POST">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input name="nomePP" type="text" class="form-control" id="nomePP" aria-describedby="emailHelp">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Cargo</label>
+                    <input name="trabalhoPP" type="text" class="form-control" id="trabalhoPP">
+                  </div>
+                  <button id="submitPP" type="submit" class="btn btn-primary">Alterar</button>
+                </form>    
+              </div>   
+              <div id="colTablePost" class="col-md-8" >
+
+                <!-- DATA TABLE -->
+              </div>
+              <div id="escondidaPP" style="display: none;">
+                <table id="unico" class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td id="nomeP"></td>
+                      <td id="cargoP"></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
             </div>
           </div>
 
         </div>
-
       </div>
 
-      <!-- Script da REST API -->
+    </div>
 
-      <script type="text/javascript">
-       var xhr = new XMLHttpRequest();
+  </div>
+</section>
+
+<section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="delete">
+  <div class="w-100">
+
+    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="resume-content">
+       <h2 class="mb-0">delete</h2>
+       <small>Essa função apenas exclui o usuário de id 2 dos registros</small>
+       <HR>
+
+       <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class="btn-group-vertical" role="group" aria-label="Basic example">
+              <button id="deletar" type="button" class="btn btn-secondary">Deletar</button>
+            </div>
+          </div>
+
+        </div> 
+
+        <div id="colTableDelete" class="col-md-8" >
+          <SPAN id="deletado"></SPAN>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+</div>
+</section>
+<!-- Script da REST API -->
+
+<script type="text/javascript">
+ var xhr = new XMLHttpRequest();
 
 
      //Listar todos os usuários
      document.getElementById("listar").onclick = function(){
-
-      $( "#colTable" ).slideToggle( "slow", function() {
+      document.getElementById("listarUnico").disabled = false;
+      $( "#colTable" ).slideToggle( "fast", function() {
       });
 
       $.ajax({
@@ -186,29 +334,30 @@
             { "data" : "last_name"},
             { "data" : "email"},]
           });
+          setTimeout(function(){ 
+            $('#dataTable').dataTable().fnDestroy();
+            $('#tbody').empty();
+          }, 3000); 
         }
       });
     };
 
-    //Listar usuário único
-    document.getElementById("listarUnico").onclick = function(){
+     //Listar usuário único
+     document.getElementById("listarUnico").onclick = function(){
+      document.getElementById("listar").disabled = true;
+      document.getElementById("naoConsta").disabled = false;
 
-
-      $('#dataTable').dataTable().fnDestroy();
+       $('#dataTable').dataTable().fnDestroy();
+        $('#tbody').empty();
       $( "#colTable" ).slideToggle( "fast", function() {
       });
-
-
       $( "#escondida" ).toggle();
-
-
 
       $.ajax({
         url: "https://reqres.in/api/users/2",
         type: "GET",
 
         success: function (response) {
-          $("#idU").text(response.data.id);
           $("#nameU").text(response.data.first_name);
           $("#lastnU").text(response.data.last_name);
           $("#avatarU").attr('src', response.data.avatar);
@@ -217,7 +366,11 @@
       });
     };
 
+    //404
     document.getElementById("naoConsta").onclick = function () {
+      document.getElementById("listarUnico").disabled = true;
+
+      document.getElementById("listarRSC").disabled = false;
 
       document.getElementById("unico").innerHTML = null;
 
@@ -234,7 +387,7 @@
            $("#retornoErro").text("Usuário não consta no sistema");
            setTimeout(function(){ 
             $("#retornoErro").text("");
-          }, 5000); 
+          }, 3000); 
          }
        }
      });
@@ -243,12 +396,14 @@
          //Listar todos os usuários RESOURCE
          document.getElementById("listarRSC").onclick = function(){
 
-           $('#dataTable').dataTable().fnDestroy();
+          document.getElementById("naoConsta").disabled = true;
 
-           $( "#colTable" ).slideToggle( "slow", function() {
-           });
+          $('#dataTable').dataTable().fnDestroy();
 
-           $.ajax({
+          $( "#colTable" ).slideToggle( "slow", function() {
+          });
+
+          $.ajax({
 
             url: "https://reqres.in/api/unknowwn",
             type: "GET",
@@ -263,74 +418,136 @@
               });
             }
           });
-         };
-
-
-
-         document.getElementById("listarUnicoRSC").onclick = function(){
-
-
-          $('#dataTable').dataTable().fnDestroy();
-          $( "#colTable" ).slideToggle( "fast", function() {
-          });
-          $( "#escondida" ).toggle();
-
-          $.ajax({
-            url: "https://reqres.in/api/unknowwn/2",
-            type: "GET",
-
-            success: function (response) {
-              $("#nameU").text(response.data.name);
-              $("#lastnU").text(response.data.color);
-              $("#emailU").text(response.data.year);
-            }
-          });
         };
 
-
-
+        //Create com POST
         document.getElementById("Criar").onclick = function(){
-          $( "#colTable" ).slideToggle( "fast", function() {
-          });
-          $( "#form" ).slideToggle( "fast", function() {
-          });
-        };
+         $('#formPost').animate({width: 'toggle'});
+       };
+
+       document.getElementById("submit").onclick = function () {
+        $( "#formPost" ).slideToggle( "fast", function() {
+        });
+
+        event.preventDefault();
+        var nome = $("#nome").val();
+        var sobrenome = $("#sobrenome").val();
+        var trabalho = $("#trabalho").val();
+
+        $.ajax({
+          url: "https://reqres.in/api/users",
+          type: "POST",
+          data: {
+            nome: nome + " " + sobrenome + " ",
+            trabalho: trabalho
+          },
+          success: function (response) {
+           $( "#escondidaPost" ).slideToggle( "fast", function() {
+           });
+           $("#nomePost").text(response.nome);
+           $("#cargoPost").text(response.trabalho);
+         }
+       })
+      };
 
 
-        document.getElementById("submit").onclick = function () {
+      //UPDATE COM PUT
+      document.getElementById("atualizarPut").onclick = function(){
+       $('#formPP').animate({width: 'toggle'});
+     };
+     document.getElementById("submitPP").onclick = function () {
+      $( "#formPP" ).slideToggle( "fast", function() {
+      });
+      event.preventDefault();
+      var nome = $("#nomePP").val();
+      var trabalho = $("#trabalhoPP").val();
 
-          $('#dataTable').dataTable().fnDestroy();
-          $( "#form" ).slideToggle( "fast", function() {
-          });
+      $.ajax({
+        url: "https://reqres.in/api/users/2",
+        type: "PUT",
+        data: {
+          nome: nome,
+          trabalho: trabalho
+        },
+        success: function (response) {
+         $( "#escondidaPP" ).slideToggle( "fast", function() {
+         });
+         $("#nomeP").text(response.nome);
+         $("#cargoP").text(response.trabalho);
+
+         setTimeout(function(){ 
+           $( "#escondidaPP" ).slideToggle( "fast", function() {
+           });
+           $("#nomeP").text("");
+           $("#cargoP").text("");
+         }, 5000); 
+       }
+     })
+    };
+
+    //UPDATE COM PATCH
+    document.getElementById("atualizarPatch").onclick = function(){
+     $('#formPP').animate({width: 'toggle'});
+   };
 
 
-          event.preventDefault();
-          var nome = $("#nome").val();
-          var sobrenome = $("#sobrenome").val();
-          var trabalho = $("#trabalho").val();
-
-          $.ajax({
-            url: "https://reqres.in/api/users",
-            type: "POST",
-            data: {
-              nome: nome + " " + sobrenome + " ",
-              trabalho: trabalho
-            },
-            success: function (response) {
-              $("#retornoCreate1").text("Nome: " + response.nome);
-              $("#retornoCreate2").text("| Cargo: " + response.trabalho);
-
-            }
-          })
-        }
+   document.getElementById("submitPP").onclick = function () {
+    $( "#formPP" ).slideToggle( "fast", function() {
+    });
 
 
+    event.preventDefault();
+    var nome = $("#nomePP").val();
+    var trabalho = $("#trabalhoPP").val();
+
+    $.ajax({
+      url: "https://reqres.in/api/users/2",
+      type: "PATCH",
+      data: {
+        nome: nome,
+        trabalho: trabalho
+      },
+      success: function (response) {
+       $( "#escondidaPP" ).slideToggle( "fast", function() {
+       });
+       $("#nomeP").text(response.nome);
+       $("#cargoP").text(response.trabalho);
+
+       setTimeout(function(){ 
+         $( "#escondidaPP" ).slideToggle( "fast", function() {
+         });
+         $("#nomeP").text("");
+         $("#cargoP").text("");
+
+       }, 5000); 
+
+
+     }
+   })
+  }
+
+           //Deleta o usuário de ID número 2 dos registros
+           document.getElementById("deletar").onclick = function(){      
+
+            $.ajax({
+              url: "https://reqres.in/api/users/2",
+              type: "DELETE",
+
+              statusCode: {
+                204: function () {
+                  $("#deletado").text("Excluido com sucesso");
+                }
+              }
+            });
+          }
+          
+          
 
 
 
-      </script>
+        </script>
 
-      <!-- Bootstrap JavaScript -->
+        <!-- Bootstrap JavaScript -->
 <!--   <script src="scss/jquery.min.js"></script>
 -->  <script src="scss/bootstrap.bundle.min.js"></script>
 
